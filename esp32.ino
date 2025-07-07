@@ -2,10 +2,6 @@
 
 #include <Arduino.h>
 
-#include "bypass.h"
-
-#include "esp_wifi.h"
-
 #include "ap.h"
 
 

@@ -12,7 +12,14 @@ String serverIp;
 String filePath;
 String fileName;
 
-void setupPayloads(String ip, String path, String name){
+void payload1();
+void payload2();
+
+
+
+void startPayload(String ip, String path, String name, int index){
+
+  void (*URDPayloads[2])() = {payload1 , payload2};
 
   serverIp = ip;
   filePath = path;
@@ -21,6 +28,8 @@ void setupPayloads(String ip, String path, String name){
   Keyboard.begin();
 
   USB.begin();
+
+  URDPayloads[index]();
 
 }
 
@@ -113,5 +122,11 @@ void payload1(){
   delay(500);
 
   Keyboard.end();
+
+}
+
+void payload2(){
+
+  openCmd();
 
 }
